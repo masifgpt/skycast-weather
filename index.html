@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast // Premium Weather Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="weather-clear"> <!-- Dynamic class changes background -->
+
+    <div class="glass-container">
+        <!-- Search & Header -->
+        <header class="app-header">
+            <div class="search-box">
+                <i class="fa-solid fa-location-dot"></i>
+                <input type="text" id="city-input" placeholder="Search city..." autocomplete="off">
+                <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="header-actions">
+                <button id="geo-btn" title="Current Location"><i class="fa-solid fa-crosshairs"></i></button>
+                <div class="unit-toggle">
+                    <span id="unit-c" class="active">°C</span>
+                    <div class="toggle-track" id="unit-switch">
+                        <div class="toggle-ball"></div>
+                    </div>
+                    <span id="unit-f">°F</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Error Message -->
+        <div id="error-msg" class="error-msg">City not found. Please try again.</div>
+
+        <!-- Main Weather Display -->
+        <main id="weather-content" class="weather-content">
+            <section class="current-weather">
+                <div class="main-info">
+                    <h1 id="city-name">London</h1>
+                    <p id="current-date">Thursday, 12 Oct</p>
+                    <div class="temp-container">
+                        <img id="weather-icon" src="https://openweathermap.org/img/wn/01d@4x.png" alt="Weather Icon">
+                        <span id="main-temp">22</span><span class="degree-symbol">°</span>
+                    </div>
+                    <h3 id="weather-desc">Clear Sky</h3>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <i class="fa-solid fa-temperature-half"></i>
+                        <div class="detail-info">
+                            <span>Feels Like</span>
+                            <strong id="feels-like">24°C</strong>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fa-solid fa-droplet"></i>
+                        <div class="detail-info">
+                            <span>Humidity</span>
+                            <strong id="humidity">45%</strong>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fa-solid fa-wind"></i>
+                        <div class="detail-info">
+                            <span>Wind Speed</span>
+                            <strong id="wind-speed">12 km/h</strong>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fa-solid fa-eye"></i>
+                        <div class="detail-info">
+                            <span>Visibility</span>
+                            <strong id="visibility">10 km</strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5-Day Forecast -->
+            <section class="forecast-section">
+                <h3>5-Day Forecast</h3>
+                <div id="forecast-container" class="forecast-container">
+                    <!-- Forecast items injected here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Initial/Loading State -->
+        <div id="loading-state" class="loading-state">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        <p>SkyCast Premium &copy; 2024. Powered by OpenWeatherMap.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
