@@ -2,7 +2,7 @@
 
 SkyCast is a high-end weather dashboard providing real-time data, 5-day forecasts, and an immersive user experience through dynamic UI changes.
 
-Live Preview: 
+Live Preview: https://skycast-weather-silk.vercel.app/
 
 ## ✨ Premium Features
 - **Real-Time Data**: Instant weather updates for any city worldwide.
